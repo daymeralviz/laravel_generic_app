@@ -13,24 +13,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+$portfolio = [
+    ['title'=>'proyect #1'],
+    ['title'=>'proyect #2'],
+    ['title'=>'proyect #3'],
+    ['title'=>'proyect #4']
+];
+
+//$portfolio = [];
+
+Route::view('/','home',['nombre' =>'Daymer'])->name('home');
+Route::view('/about','about')->name('about');
+Route::view('/portfolio','portfolio',compact('portfolio'))->name('portfolio');
+Route::get('/portfolio','PortfolioController')
+
+Route::view('/contact','contact')->name('contact');
+
+/*
+
 Route::get('/', function () {
-    return "Hola desde el inicio";
-    //return view('welcome');
-});
+    $nombre = "Dywwe";
+    //return view('home')->with(['nombre' => $nombre]);
+   /return view('home', compact('nombre'));
+})->name('home');
+*/
 
 Route::get('saludo/{nombre?}', function ($nombre = "Invitado") {
     return "prueba de saludos:" . $nombre;
 });
 
-Route::get('contactame', function () {
-    return "Seccion de contactos";
-})->name('contactos');
-
-
-Route::get('/',function(){
-    echo "<a href='".route('contactos')."'>Contacto 1</a><br>";
-    echo "<a href='".route('contactos')."'>Contacto 2</a><br>";
-    echo "<a href='".route('contactos')."'>Contacto 3</a><br>";
-    echo "<a href='".route('contactos')."'>Contacto 4</a><br>";
-    echo "<a href='".route('contactos')."'>Contacto 5</a><br>";
-});
