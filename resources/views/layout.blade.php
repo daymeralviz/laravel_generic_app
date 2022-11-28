@@ -5,20 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title','title Default')</title>
+    <style>
+        .active a {
+            color: red;
+            text-decoration: none;
+            }
+
+    </style>    
 </head>
 <body>
     <nav>
         <ul>
-            <li>
+            <li class="{{ request()->routeIs('home') ? 'active' : '' }}">
                 <a href="/">Home</a>
             </li>
-            <li>
+            <li class="{{ request()->routeIs('about') ? 'active' : '' }}" >
                 <a href="/about">About</a>
             </li>
-            <li>
+            <li class="{{ request()->routeIs('portfolio') ? 'active' : '' }}">
                 <a href="/portfolio">Porfolio</a>
             </li>
-            <li>
+            <li class="{{ request()->routeIs('contact') ? 'active' : '' }}">
                 <a href="/contact">Contact</a>
             </li>
         </ul>
