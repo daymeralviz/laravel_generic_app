@@ -22,7 +22,7 @@ Route::view('/about','about')->name('about');
 //Route::view('/portfolio','portfolio',compact('portfolio'))->name('portfolio');
 
 
-Route::get('/portfolio', PortfolioController::class)->name('portfolio');
+Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
 
 Route::view('/contact','contact')->name('contact');
 
@@ -38,6 +38,8 @@ Route::get('/', function () {
 Route::get('saludo/{nombre?}', function ($nombre = "Invitado") {
     return "prueba de saludos:" . $nombre;
 });
+
+//Route::resource('proyectos',PortfolioController::class);
 
 
 
