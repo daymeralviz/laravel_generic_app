@@ -13,19 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-$portfolio = [
-    ['title'=>'proyect #1'],
-    ['title'=>'proyect #2'],
-    ['title'=>'proyect #3'],
-    ['title'=>'proyect #4']
-];
 
-//$portfolio = [];
+use App\Http\Controllers\PortfolioController; 
+
 
 Route::view('/','home',['nombre' =>'Daymer'])->name('home');
 Route::view('/about','about')->name('about');
-Route::view('/portfolio','portfolio',compact('portfolio'))->name('portfolio');
-Route::get('/portfolio','PortfolioController')
+//Route::view('/portfolio','portfolio',compact('portfolio'))->name('portfolio');
+
+
+Route::get('/portfolio', PortfolioController::class)->name('portfolio');
 
 Route::view('/contact','contact')->name('contact');
 
@@ -41,4 +38,6 @@ Route::get('/', function () {
 Route::get('saludo/{nombre?}', function ($nombre = "Invitado") {
     return "prueba de saludos:" . $nombre;
 });
+
+
 
