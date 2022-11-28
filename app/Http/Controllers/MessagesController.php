@@ -23,7 +23,7 @@ class MessagesController extends Controller
         // enviar el email
 
         Mail::to('daymer21@gmail.com')->queue(new MessageReceived($message));
-
+       // envio con mailtrap
        // return new MessageReceived($message);
 
          return 'Mensaje enviado';
