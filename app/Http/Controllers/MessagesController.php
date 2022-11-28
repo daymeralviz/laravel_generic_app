@@ -10,7 +10,9 @@ class MessagesController extends Controller
     {
          request()->validate([
             'name' => 'required',
-            'email' => 'required'
+            'email' => 'required|email',
+            'subject'=> 'required',
+            'content'=> 'required|min:3',
          ]);
 
          return 'Datos validados';
