@@ -1,16 +1,16 @@
 <nav>
     <ul>
         <li class="{{ setActive('home') }}">
-            <a href="/">Home</a>
+            <a href="/">@lang('Home')</a>
         </li>
         <li class="{{ setActive('about') }}" >
-            <a href="/about">About</a>
+            <a href="/about">@lang('About')</a>
         </li>
         <li class="{{ setActive('portfolio') }}">
-            <a href="/portfolio">Porfolio</a>
+            <a href="/portfolio">@lang('Porfolio')</a>
         </li>
         <li class="{{ setActive('contact') }}">
-            <a href="/contact">Contact</a>
+            <a href="/contact">@lang('Contact')</a>
         </li>
     </ul>
 

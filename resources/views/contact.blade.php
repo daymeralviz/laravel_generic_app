@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <h1>Contact</h1>
+    <h1>{{ __('Contact') }}</h1>
 {{--
    @if($errors->any())
    <ul>
@@ -29,7 +29,7 @@
         {!! $errors->first('subject','<small>:message</small><br>') !!} <br>
         <textarea name="content" placeholder="Mensaje ..." >{{ old('content') }}</textarea>
         {!! $errors->first('content','<small>:message</small><br>') !!} <br>
-        <button>Enviar</button>
+        <button>@lang('Send')</button>
 
     </form>    
 

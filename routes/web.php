@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PortfolioController; 
 use App\Http\Controllers\MessagesController; 
 
+// App::setLocale('en');
+
 Route::view('/','home',['nombre' =>'Daymer'])->name('home');
 Route::view('/about','about')->name('about');
 //Route::view('/portfolio','portfolio',compact('portfolio'))->name('portfolio');
