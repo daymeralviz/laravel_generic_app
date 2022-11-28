@@ -8,6 +8,11 @@ class MessagesController extends Controller
 {
     public function store()
     {
-        return request('email');
+         request()->validate([
+            'name' => 'required',
+            'email' => 'required'
+         ]);
+
+         return 'Datos validados';
     }
 }
