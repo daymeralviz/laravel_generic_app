@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\PortfolioController; 
-
+use App\Http\Controllers\MessagesController; 
 
 Route::view('/','home',['nombre' =>'Daymer'])->name('home');
 Route::view('/about','about')->name('about');
@@ -41,5 +41,6 @@ Route::get('saludo/{nombre?}', function ($nombre = "Invitado") {
 
 //Route::resource('proyectos',PortfolioController::class);
 
+Route::post('contact',[MessagesController::class,'store']);
 
 
