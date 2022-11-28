@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class MessagesController extends Controller
 {
-    public function store(Request $request)
+    public function store()
     {
-        return $request->get('name');
+        return request('email');
     }
 }
